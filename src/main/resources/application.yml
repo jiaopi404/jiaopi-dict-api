@@ -10,6 +10,10 @@ spring:
     url: jdbc:mysql://47.108.156.216:3307/jiaopi_dict_all?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
     username: root
     password: root
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
 
 #eureka:
 #  client:
@@ -29,10 +33,10 @@ spring:
 swagger:
   enable: true
 
-mybatis:
-  table:
-    auto: update
-  modal:
-    pack: org.jiaopi.pojo
-  database:
-    type: mysql
+#mybatis:
+#  table:
+#    auto: update
+#  modal:
+#    pack: org.jiaopi.pojo
+#  database:
+#    type: mysql

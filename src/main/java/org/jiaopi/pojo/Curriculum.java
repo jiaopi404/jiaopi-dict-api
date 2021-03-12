@@ -1,41 +1,34 @@
 package org.jiaopi.pojo;
 
-//import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-//import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
-@ApiModel(description = "user", value = "user")
-@Table(name = "tb_user")
-public class User implements Serializable {
-    @ApiModelProperty(value = "user id", required = false)
+@ApiModel(description = "curriculum", value = "课程")
+@Table(name = "tb_curriculum")
+public class Curriculum implements Serializable {
+
+    @ApiModelProperty(value = "curriculum id", required = false)
     @Id
     @Column(name = "id")
-//    @JsonSerialize(using = ToStringSerializer.class)
-    private Long id; // 编号
+    private Long id;
 
-    @ApiModelProperty(value = "user name", required = false)
+    @ApiModelProperty(value = "curriculum name", required = false)
     @Column(name = "name")
-    private String name; // user名称
+    private String name;
 
-    @ApiModelProperty(value = "创建时间",required = false)
+    @ApiModelProperty(value = "curriculum create time", required = false)
     @Column(name = "create_time")
     private Date createTime = new Date();
 
-    @ApiModelProperty(value = "更新时间",required = false)
+    @ApiModelProperty(value = "curriculum update time", required = false)
     @Column(name = "update_time")
     private Date updateTime = new Date();
-
-    @ApiModelProperty(value = "课程信息")
-    @JoinColumn(name = "curriculum_id", table = "tb_curriculum")
-    private Curriculum curriculum;
 
     public Long getId() {
         return id;
@@ -63,14 +56,6 @@ public class User implements Serializable {
 
     public Date getUpdateTime() {
         return updateTime;
-    }
-
-    public Curriculum getCurriculum() {
-        return curriculum;
-    }
-
-    public void setCurriculum(Curriculum curriculum) {
-        this.curriculum = curriculum;
     }
 
     public void setUpdateTime(Date updateTime) {

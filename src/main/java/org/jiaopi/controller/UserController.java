@@ -30,4 +30,10 @@ public class UserController {
     public Result<User> findById (@PathVariable("id") Long id) {
         return new Result<>(true, StatusCode.OK, "find success", userService.findById(id));
     }
+
+    @PostMapping(value = "/add")
+    public Result<Boolean> add (@RequestBody User user) {
+        userService.add(user);
+        return new Result<>(true, StatusCode.OK, "add success", true);
+    }
 }

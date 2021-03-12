@@ -95,6 +95,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <!--mybatis分页插件; 各大主流数据库的分页操作 -->
         <dependency>
@@ -133,6 +134,13 @@
                     <groupId>commons-logging</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+<!--        开发工具 - 热重载-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <!--
