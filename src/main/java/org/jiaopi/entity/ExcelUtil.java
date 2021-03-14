@@ -80,10 +80,9 @@ public class ExcelUtil {
         ExcelUtil excelUtil = new ExcelUtil();
         Workbook wb = excelUtil.getExcelByFilePath("/Users/jiaopi404/Desktop/github_demos/jiaopi-dict-api/src/main/java/org/jiaopi/entity/testFiles/导入校内基本支出预算模板.xlsx");
         List<String[]> result = excelUtil.analyzeExcel(wb);
-        for (int i = 0; i < result.size(); i++) {
-            String[] row = result.get(i);
-            for (int j = 0; j < row.length; j++) {
-                System.out.print(row[j] + " ");
+        for (String[] row : result) {
+            for (String s : row) {
+                System.out.print(s + " ");
             }
             System.out.println();
         }
