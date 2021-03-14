@@ -6,12 +6,12 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Repository;
-import tk.mybatis.spring.annotation.MapperScan;
+//import org.springframework.stereotype.Repository;
+//import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootConfiguration
 @EnableAutoConfiguration
-@MapperScan(basePackages = {"org.jiaopi.dao"}, annotationClass = Repository.class)
+//@MapperScan(basePackages = {"org.jiaopi.dao"}, annotationClass = Repository.class)
 @ComponentScan(basePackages = {"org.jiaopi"})
 public class JoPeeDictApplication {
     public static void main(String[] args) {

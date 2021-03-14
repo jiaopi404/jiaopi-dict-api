@@ -3,18 +3,19 @@ package org.jiaopi.pojo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @ApiModel(description = "curriculum", value = "课程")
 @Table(name = "tb_curriculum")
+@Entity
 public class Curriculum implements Serializable {
 
+    private static final long serialVersionUID = 8638763266243872066L;
     @ApiModelProperty(value = "curriculum id", required = false)
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
