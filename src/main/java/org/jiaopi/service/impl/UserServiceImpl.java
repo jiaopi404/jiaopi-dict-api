@@ -2,9 +2,7 @@ package org.jiaopi.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-//import org.jiaopi.dao.CurriculumMapper;
 import org.jiaopi.dao.UserMapper;
-//import org.jiaopi.pojo.Curriculum;
 import org.jiaopi.pojo.User;
 import org.jiaopi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +16,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
-//    @Autowired
-//    private CurriculumMapper curriculumMapper;
-
     @Override
     public User add(User user) {
-//        Curriculum curriculum1 = user.getCurriculum();
-//        Curriculum curriculum = curriculumMapper.save(user.getCurriculum());
-//        User user1 = new User();
-////        user1.setCurriculum(curriculum);
-//        user1.setName(user.getName());
         return userMapper.save(user);
     }
 

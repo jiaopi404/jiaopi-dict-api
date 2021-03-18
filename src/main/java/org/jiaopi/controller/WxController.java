@@ -8,14 +8,10 @@ import org.jiaopi.pojo.User;
 import org.jiaopi.service.UserService;
 import org.jiaopi.service.WxService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.NumberUtils;
-import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/wx")
@@ -46,11 +42,12 @@ public class WxController {
         }
         // 2. 查询不到，创建 user
         user = new User();
-        // 创建用户名
-        String currentTime = new Date().getTime() + "";
-        user.setName("用户名" + currentTime.substring(currentTime.length() - 5, currentTime.length() - 1));
+        String currentTime = new Date().getTime() + ""; // 用户名后缀
+        user.setName("用户名" +
+                currentTime.substring(currentTime.length() - 5, currentTime.length() - 1)
+        ); // 设置用户名
         user.setOpenId(openId);
-        user = userService.add(user);
+        user = userService.add(user); // 调用添加 user 服务
         return new Result<>(true, StatusCode.OK, "成功", user);
     }
 }
