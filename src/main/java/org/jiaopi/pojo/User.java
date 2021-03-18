@@ -34,14 +34,16 @@ public class User implements Serializable {
     @Column(name = "update_time")
     private Date updateTime = new Date();
 
-    @ApiModelProperty(value = "课程信息")
-    @ManyToOne
-    @JoinColumn(name = "curriculum_id", insertable = true, unique = false, foreignKey = @ForeignKey(
-            name = "none", value = ConstraintMode.NO_CONSTRAINT
-    ))
-    private Curriculum curriculum;
+//    @ApiModelProperty(value = "课程信息")
+//    @ManyToOne
+//    @JoinColumn(name = "curriculum_id", insertable = true, unique = false, foreignKey = @ForeignKey(
+//            name = "none", value = ConstraintMode.NO_CONSTRAINT
+//    ))
+//    private Curriculum curriculum;
 
-    private Long uid;
+    @ApiModelProperty(value = "微信 openId")
+    @Column(name = "open_id")
+    private String openId;
 
     public Long getId() {
         return id;
@@ -71,15 +73,23 @@ public class User implements Serializable {
         return updateTime;
     }
 
-    public Curriculum getCurriculum() {
-        return curriculum;
-    }
-
-    public void setCurriculum(Curriculum curriculum) {
-        this.curriculum = curriculum;
-    }
+//    public Curriculum getCurriculum() {
+//        return curriculum;
+//    }
+//
+//    public void setCurriculum(Curriculum curriculum) {
+//        this.curriculum = curriculum;
+//    }
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 }

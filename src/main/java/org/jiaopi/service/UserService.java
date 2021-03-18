@@ -7,13 +7,15 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
-    void add (User user);
+    User add (User user);
 
     void delete (Long id);
 
     void update (User user);
 
     List<User> findAll ();
+
+    User getUserByOpenId (String openId);
 
     Optional<User> findById (Long id);
 

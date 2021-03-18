@@ -7,4 +7,10 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 //import org.springframework.stereotype.Repository;
 
 public interface ProConfigMapper extends JpaRepository<ProConfig, Long>, JpaSpecificationExecutor<ProConfig> {
+    /**
+     * 根据
+     * @param apiKey
+     * @return
+     */
+    ProConfig getProConfigByApiKey (String apiKey);
 }

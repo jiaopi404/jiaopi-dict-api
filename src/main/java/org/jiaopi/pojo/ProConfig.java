@@ -26,6 +26,10 @@ public class ProConfig implements Serializable {
     @Column(name = "wx_secret")
     private String wxSecret;
 
+    @ApiModelProperty(value = "api key", required = false)
+    @Column(name = "api_key")
+    private String apiKey;
+
     public Long getId() {
         return id;
     }
