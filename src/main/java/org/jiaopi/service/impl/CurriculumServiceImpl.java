@@ -13,7 +13,13 @@ public class CurriculumServiceImpl implements CurriculumService {
     private CurriculumMapper curriculumMapper;
 
     @Override
-    public Curriculum add(Curriculum curriculum) {
+    public Curriculum save(Curriculum curriculum) {
         return curriculumMapper.save(curriculum);
+    }
+
+    @Override
+    public Curriculum getOne(Long id) {
+//        curriculumMapper.findById(id);
+        return curriculumMapper.findById(id).get();
     }
 }

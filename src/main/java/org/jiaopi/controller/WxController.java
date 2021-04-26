@@ -38,7 +38,7 @@ public class WxController {
         // 1. 能查询得到，返回 user
         User user = userService.getUserByOpenId(openId);
         if (user != null) {
-            return new Result<>(true, StatusCode.OK, "登录成功！", user);
+            return new Result<>(true, StatusCode.OK, "登录成功, 已有账户！", user);
         }
         // 2. 查询不到，创建 user
         user = new User();
@@ -48,6 +48,6 @@ public class WxController {
         ); // 设置用户名
         user.setOpenId(openId);
         user = userService.add(user); // 调用添加 user 服务
-        return new Result<>(true, StatusCode.OK, "成功", user);
+        return new Result<>(true, StatusCode.OK, "注册并登录成功", user);
     }
 }

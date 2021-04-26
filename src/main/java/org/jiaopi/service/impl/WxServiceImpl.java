@@ -49,9 +49,9 @@ public class WxServiceImpl implements WxService {
             HttpEntity httpEntity = response.getEntity();
             if (httpEntity != null) {
                 // 获取内容
-                System.out.println("响应内容长度： " + httpEntity.getContentLength());
+//                System.out.println("响应内容长度： " + httpEntity.getContentLength());
                 String responseText = EntityUtils.toString(httpEntity);
-                System.out.println("响应内容： " + responseText);
+//                System.out.println("响应内容： " + responseText);
                 jsonObject = JSONObject.parseObject(responseText);
             }
         } catch (ClientProtocolException e) {
