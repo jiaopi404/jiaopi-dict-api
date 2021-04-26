@@ -19,7 +19,6 @@ public class CurriculumServiceImpl implements CurriculumService {
 
     @Override
     public Curriculum getOne(Long id) {
-//        curriculumMapper.findById(id);
         return curriculumMapper.findById(id).get();
     }
 }
